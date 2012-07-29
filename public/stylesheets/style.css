@@ -1,0 +1,51 @@
+body {
+  padding: 20px;
+  
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+a {
+  color: #00B7FF;
+}
+.sprintboard{
+  margin:0px auto;
+  width:990px;
+  height:800px;
+}
+
+.header{
+  margin:20px auto;
+  font-size:20px;
+}
+li.task{
+  list-style-type: none;
+  margin:0px,5px;
+  margin-bottom:20px;
+  font-size:20px;
+}
+.panel{
+  float:left;
+  border: 1px solid #bbb;
+  padding: 1px ;
+  width: 326px;
+}
+.panelheader{
+  font-size:30px;
+  text-align:center;
+}
+.connectedSortable{
+  padding:10px;
+  list-style-type: none;
+  min-height:20px;
+  margin:10px;
+}
+button{
+  font-size:18px;
+}
+
+.burnbut{
+  font-size:20px;
+}
+
+.hidden{
+  display:none;
+}

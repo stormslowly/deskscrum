@@ -1,0 +1,52 @@
+script(src='/javascripts/sprint.js')
+<div class='sprintboard' id = '#{sprint._id}'>
+<div class='header'> #{sprint.name} </div>
+
+<div class='panel'>
+div(class='panelheader') Not Start Task
+<ul  id='sortable1' class='connectedSortable'>
+each task in sprint.tasks
+  if(task.status==='notstart') 
+    li(class="ui-state-default task ui-corner-all")
+      div(id = "#{task._id}")#{task.desc} #{task.left}/#{task.size}
+      div(class='taskbar',id='#{task._id}',size='#{task.size}',left='#{task.left}')
+      div(id= "#{task._id}",class='hidden')
+        button(class='burnbut') Burn Me 
+</ul>
+</div>
+
+<div class='panel'>
+div(class='panelheader') Ongoing Task
+<ul id='sortable2' class='connectedSortable'>
+each task in sprint.tasks
+  if(task.status==='ongoing') 
+    li(class="task ui-state-default ui-corner-all", id="#{task._id}")
+      div(id = "#{task._id}")#{task.desc} #{task.left}/#{task.size}
+      div(class='taskbar',id='#{task._id}',size='#{task.size}',left='#{task.left}')
+      div(id= "#{task._id}")
+        button(class='burnbut') Burn Me 
+</ul>
+
+div(id="burndown-form",title="Burn!")
+  p please enter the burndown point
+  form(id='burnform',method='POST',action='/burn') 
+    label Points:
+    br
+    input(name = "sprintid" ,class = "hidden")
+    input(name = "taskid",class="hidden")
+    input(name = "points",type='text',class="text ui-widget-content ui-corner-all")
+</div>
+
+<div class='panel'>
+div(class='panelheader') Done Task
+<ul id='sortable3' class='connectedSortable'>
+each task in sprint.tasks
+  if(task.status==='done') 
+    li(class="ui-state-default task ui-corner-all")
+      div(id = "#{task._id}") #{task.desc} #{task.left}/#{task.size}
+      div(class='taskbar',id='#{task._id}',size='#{task.size}',left='#{task.left}')
+      div(id= "#{task._id}",class='hidden')
+        button(class='burnbut') Burn Me 
+</ul>
+</div>
+</div>

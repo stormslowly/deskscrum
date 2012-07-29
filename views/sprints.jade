@@ -1,0 +1,15 @@
+
+if sprints.length===0
+	p there is no sprint created 
+else
+	p there are #{sprints.length} sprints
+	each sp in sprints
+		ul
+			li 
+				a(href='/sprint/#{sp._id}') #{sp.name} 
+					| (from #{sp.begDate.getFullYear()}-
+					|#{sp.begDate.getMonth()}-
+					|#{sp.begDate.getDate()} to 
+					|#{sp.endDate.getFullYear()}-
+					|#{sp.endDate.getMonth()}-
+					|#{sp.endDate.getDate()})

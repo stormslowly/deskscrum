@@ -1,0 +1,25 @@
+<div.mainpanel>
+script(src='/javascripts/newsprint.js')
+form(name='sprint',method='post',action='/new')
+  p
+    label.name Sprint Name
+      input(name='name')
+  p
+    label.sprintdate Begin Day
+      input(name='begDate')
+  p
+    label.sprintdate End Day
+      input(name='endDate')
+  p
+    label Task 
+    input(name='taskdesc') 
+    label Size 
+    input(name='size') 
+    
+  p
+    input(id='newtask_btn',type='button',value='New Task')
+
+  p
+    input(id='submit_btn',type='button',value='Create Sprint',action=function(){})
+
+</div>

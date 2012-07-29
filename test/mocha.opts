@@ -1,0 +1,2 @@
+--require  test/support/http.js
+--require  node_modules/should
